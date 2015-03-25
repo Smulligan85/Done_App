@@ -12,9 +12,16 @@
         %ul.nav.nav-tabs.pull-left
           %li= link_to "DONE", root_path
         %ul.nav.nav-tabs.pull-right
-          %li= link_to "Sign In", '#'
-          %li= link_to "Sign Up", '#'
-          %li= link_to "Contact", '#'
+          / %li= link_to "Sign In", '#'
+          / %li= link_to "Sign Up", '#'
+          / %li= link_to "Contact", '#'
+        .pull-right.user-info
+          - if current_user
+            Hello #{current_user.email}! #{link_to "Sign out", destroy_user_session_path, method: :delete}
+          - else
+            = link_to "Sign In", new_user_session_path
+            or
+            \#{link_to "Sign Up", new_user_registration_path}
       .row
         - if flash[:notice]
           .alert.alert-success
