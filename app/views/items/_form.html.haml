@@ -1,13 +1,11 @@
-= form_for @item do |f|
-  - if @item.errors.any?
+= form_for [user, item] do |f|
+  - if item.errors.any?
     .alert.alert-danger
-      %h4 There are #{pluralize(@item.errors.count, "error")}
+      %h4 There are #{pluralize(item.errors.count, "error")}
       %ul
-        - @item.errors.full_messages.each |msg|
+        - item.errors.full_messages.each do |msg|
           %li= msg
+  = f.label :name
+  = f.text_field :name
+  = f.submit
           
-  = form_group_tag(@item.errors[:name]) do
-    = f.label :name
-    = f.text_field :name, class: 'form-control', placeholder: "To Do Item"
-
-  = f.submit "Save", class: 'btn btn-success'
