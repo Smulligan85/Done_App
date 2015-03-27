@@ -1,4 +1,4 @@
 .row
-  = @items.each do |item|
+  - @items.each do |item|
     %ul
-      %li= item
+      %li= item.name

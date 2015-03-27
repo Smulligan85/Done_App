@@ -5,5 +5,5 @@
   .row.sub-header  
     %p Things to Get DONE
   .row
-    = render partial: 'items/form'
+    = render partial: 'items/form', locals: { user: current_user, item: @item }
     = render partial: 'items/item'
