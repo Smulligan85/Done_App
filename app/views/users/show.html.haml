@@ -4,3 +4,6 @@
     %h1 Welcome #{@user.email}
   .row.sub-header  
     %p Things to Get DONE
+  .row
+    = render partial: 'items/form'
+    = render partial: 'items/item'
