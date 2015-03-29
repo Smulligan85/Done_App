@@ -1,5 +1,21 @@
+/ .row
+/   - @items.each do |item|
+/     %ul
+/       %li= item.name + " " + item.days_left.to_s
+/       = link_to "", [current_user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok'
+
+
 .row
-  - @items.each do |item|
-    %ul
-      %li= item.name + " " + item.days_left.to_s
-      = link_to "", [current_user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok'
+  .col-md-12
+    - @items.each do |item|
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Task
+            %th Days Left
+            %th Delete
+        %tbody
+          %tr
+            %td= item.name
+            %td= item.days_left
+            %td= link_to "", [current_user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok'
