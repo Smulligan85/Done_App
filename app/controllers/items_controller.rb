@@ -15,7 +15,11 @@ class ItemsController < ApplicationController
 def destroy
   @item = current_user.items.find(params[:id])
   @item.destroy ? flash[:notice] = "Item destroyed." :  flash[:alert] = "Item could not be destroyed."
-  redirect_to authenticated_root_path
+  # redirect_to authenticated_root_path  
+  respond_to do |format|
+    format.html
+    format.js
+  end
 end
 
   private

@@ -1,4 +1,5 @@
 .row
   - @items.each do |item|
     %ul
-      %li= item.name
+      %li= item.name 
+      = link_to "", [current_user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok'

@@ -7,6 +7,3 @@
   .row
     = render partial: 'items/form', locals: { user: current_user, item: @item }
     = render partial: 'items/item'
-    = link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok'
-    / = link_to "", @item, method: :delete, class: 'glyphicon glyphicon-ok'
-    / = link_to "", [user, item], method: :delete, class: 'glyphicon glyphicon-ok'
