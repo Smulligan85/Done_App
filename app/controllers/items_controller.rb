@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  respond_to :html, :js
 
   def index
     @items = current_user.items
