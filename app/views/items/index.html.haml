@@ -6,4 +6,13 @@
     %p Things to Get DONE
   .row
     = render partial: 'items/form', locals: { user: current_user, item: @item }
-    = render partial: 'items/item'
+  .row
+    .col-md-12
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Task
+            %th Days Left
+            %th Delete
+        %tbody
+          = render partial: 'items/item', collection: @items
